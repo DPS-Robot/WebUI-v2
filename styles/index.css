@@ -10,9 +10,10 @@ body {
 
 .main-container {
   display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
+  align-items: center;
+  justify-content: space-around;;
 }
 
 .upperContainer {
@@ -21,6 +22,10 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+.circleIcons{
+  height: 4rem;
 }
 
 .tempWeatherContainer {
@@ -55,6 +60,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.statusText{
+  font-size: 2rem;
 }
 
 .textContainer {
