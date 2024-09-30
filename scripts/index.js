@@ -25,6 +25,7 @@ function changeColor(color) {
   document.getElementById("circleOverSvg").style.backgroundColor = color;
 }
 
+/*
 (async () => {
   setListening();
   await sleep("5000");
@@ -38,6 +39,7 @@ function changeColor(color) {
   await sleep("5000");
   setSpeaking();
 })();
+*/
 
 function setListening() {
   expandElement("circleOverSvg", "25rem");
@@ -45,7 +47,6 @@ function setListening() {
   document.getElementById("circleOverSvg").style.animationName = "none";
   changeColor("#C6EEFF");
   document.getElementById("statusImage").style.animationDuration = "10s"
-
 }
 
 async function setProcessing() {
