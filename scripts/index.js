@@ -50,6 +50,21 @@ function setSpeaking() {
   changeColor("#c9f2cb");
 }
 
-function getInfo(){
-
+async function getInfo() {
+  let d;
+  await fetch(`${backendUrl}/status`)
+    .then(response => response.json())
+    .then(data => {
+      d = data;
+  });
+  console.log(d)
+  if(d.status == "listening") {
+    setListening();
+  } else if(d.status == "processing") {
+    setProcessing();
+  } else if(d.status == "speaking") {
+    setSpeaking();
+  }
 }
+
+setInterval(getInfo, 1000);
