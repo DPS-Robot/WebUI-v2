@@ -67,4 +67,4 @@ async function getInfo() {
   }
 }
 
-setInterval(getInfo, 1000);
+//setInterval(getInfo, 1000);
