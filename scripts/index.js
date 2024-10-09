@@ -39,7 +39,7 @@ async function setProcessing() {
   document.getElementById("circleOverSvg").style.animationName = "processing";
   await sleep(500)
   document.getElementById("statusImage").style.animationDuration = "25s"
-  changeColor("#87b6ff");
+  changeColor("rgb(216 221 255)");
 }
 
 function setSpeaking() {

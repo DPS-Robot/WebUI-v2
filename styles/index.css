@@ -173,7 +173,7 @@ body {
 
 .circle {
   fill: none;
-  stroke: #3b82f6;
+  stroke: #e1affa;
   stroke-width: 15;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.5s;
