@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/index.css">
+  <script src="env.js"></script>
   <title>Status Page</title>
 </head>
 
@@ -39,10 +40,32 @@
         </script>
       </div>
       <div class="weatherContainer">
-        <img src="./assets/sun.svg" alt="weather" class="weatherIcon">
+        <img src="./assets/sun.svg" alt="weather" id="weatherIcon" class="weatherIcon">
         <div class="weatherCondition">
           <p id="temperature" class="temperature">25°C</p>
           <p id="condition" class="condition">Sunny</p>
+        </div>
+      </div>
+      <div class="systemResources">
+        <div class="meter-container">
+          <div class="circular-meter">
+            <svg width="200" height="200">
+              <circle class="circle-bg" cx="100" cy="100" r="92"></circle>
+              <circle id="cpuUsage" class="circle" cx="100" cy="100" r="92"></circle>
+            </svg>
+            <div id="cpuPercent" class="percentage">0%</div>
+          </div>
+          <div class="meterText">CPU</div>
+        </div>
+        <div class="meter-container">
+          <div class="circular-meter">
+            <svg width="200" height="200">
+              <circle class="circle-bg" cx="100" cy="100" r="92"></circle>
+              <circle id="ramUsage" class="circle" cx="100" cy="100" r="92"></circle>
+            </svg>
+            <div id="ramPercent" class="percentage">0%</div>
+          </div>
+          <div class="meterText">RAM</div>
         </div>
       </div>
     </div>
