@@ -50,6 +50,15 @@ function setSpeaking() {
   changeColor("#c9f2cb");
 }
 
+async function setError(){
+  expandElement("circleOverSvg", "30rem");
+  document.getElementById("statusText").innerHTML = "Error";
+  document.getElementById("circleOverSvg").style.animationName = "error";
+  await sleep(500)
+  document.getElementById("statusImage").style.animationDuration = "25s"
+  changeColor("#ff8f8f");
+}
+
 async function getInfo() {
   let d;
   await fetch(`${backendUrl}/status`)
@@ -64,6 +73,8 @@ async function getInfo() {
     setProcessing();
   } else if(d.status == "speaking") {
     setSpeaking();
+  } else if(d.status == "error") {
+    setError();
   }
 }
 
@@ -107,7 +118,7 @@ fetch(weatherAPIEndpoint).then(response => response.json()).then(data => {
   let temperature = data.current.temp_c.toString().split(".")[0];
   let condition = data.current.condition.text
   if(sunnyConditions.includes(condition)) {
-    document.getElementById("weatherIcon").src = "./assets/sunny.svg";
+    document.getElementById("weatherIcon").src = "./assets/sun.svg";
   } else if(cloudyConditions.includes(condition)) {
     document.getElementById("weatherIcon").src = "./assets/cloudy.svg";
   } else if(partlyCloudyConditions.includes(condition)) {

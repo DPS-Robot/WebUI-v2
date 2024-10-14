@@ -3,42 +3,33 @@ const min = 1;
 const max = 1.5;
 let shapes;
 
-const containerBox = {
-  x: window.innerWidth / 3,
-  y: window.innerHeight / 3,
-  width: window.innerWidth / 3,
-  height: window.innerHeight / 3
-};
-
 class Shape {
   constructor(el) {
     this.el = el;
     this.size = el.offsetWidth;
-    this.x = random(containerBox.x, containerBox.x + containerBox.width - this.size);
-    this.y = random(containerBox.y, containerBox.y + containerBox.height - this.size);
-    this.vx = random(min, max);
-    this.vy = random(min, max);
+    this.x = random(0,window.innerWidth - this.size);
+    this.y = random(0,window.innerHeight - this.size);
+    this.vx = random(min,max);
+    this.vy = random(min,max);
   }
-
   boundary() {
-    if (this.x >= containerBox.x + containerBox.width - this.size) {
+    if (this.x >= window.innerWidth - this.size) {
       this.vx *= -1;
-      this.x = containerBox.x + containerBox.width - this.size;
+      this.x = window.innerWidth - this.size;
     }
-    if (this.y >= containerBox.y + containerBox.height - this.size) {
+    if (this.y >= window.innerHeight - this.size) {
       this.vy *= -1;
-      this.y = containerBox.y + containerBox.height - this.size;
+      this.y = window.innerHeight - this.size;
     }
-    if (this.x <= containerBox.x) {
+    if (this.x <= 0) {
       this.vx *= -1;
-      this.x = containerBox.x;
+      this.x = 0;
     }
-    if (this.y <= containerBox.y) {
+    if (this.y <= 0) {
       this.vy *= -1;
-      this.y = containerBox.y;
+      this.y = 0;
     }
   }
-
   animate() {
     this.x += this.vx;
     this.y += this.vy;
@@ -47,7 +38,7 @@ class Shape {
   }
 }
 
-const random = (min, max) => Math.random() * (max - min) + min;
+const random = (min,max) => Math.random() * (max-min) + min;
 
 function update() {
   shapes.forEach((shape) => shape.animate());
@@ -55,8 +46,8 @@ function update() {
 }
 
 function init() {
-  shapes = Array.from(elements, (el) => new Shape(el));
+  shapes = Array.from(elements,(el) => new Shape(el));
   update();
 }
 
-window.addEventListener('load', init, false);
+window.addEventListener('load',init,false);
