@@ -74,19 +74,14 @@ async function getInfo() {
     .then(data => {
       d = data;
   });
-  console.log(d)
   if(d.status == "init") {
     setInit();
-    console.log("at INit")
   } else if(d.status == "listening") {
     setListening();
-    console.log("at listening")
   } else if(d.status == "processing") {
     setProcessing();
-    console.log("at processing")
   } else if(d.status == "speaking") {
     setSpeaking();
-    console.log("at speaking")
   } else if(d.status == "error") {
     setError();
   }
