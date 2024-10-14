@@ -25,6 +25,14 @@ function changeColor(color) {
   document.getElementById("circleOverSvg").style.backgroundColor = color;
 }
 
+function setInit(){
+  expandElement("circleOverSvg", "25rem");
+  document.getElementById("statusText").innerHTML = "Initializing...";
+  document.getElementById("circleOverSvg").style.animationName = "none";
+  changeColor("rgb(240 207 255)");
+  document.getElementById("statusImage").style.animationDuration = "10s"
+}
+
 function setListening() {
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Listening...";
@@ -39,7 +47,7 @@ async function setProcessing() {
   document.getElementById("circleOverSvg").style.animationName = "processing";
   await sleep(500)
   document.getElementById("statusImage").style.animationDuration = "25s"
-  changeColor("#87b6ff");
+  changeColor("rgb(217 229 255)");
 }
 
 function setSpeaking() {
