@@ -1,0 +1,37 @@
+:root {
+  --size: 350px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.shapes, .glass {
+  position: fixed;
+  inset: 0;
+}
+
+.glass {
+  z-index: 10;
+  background-color: rgba(235, 226, 173, 0.3);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  display: grid;
+  place-items: center;
+  font: 900 2.25rem futura,sans-serif;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.shape {
+  position: absolute;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.shape-yellow { background-color: rgb(240,217,139,0.8); }
+.shape-salmon { background-color: rgb(241,163,163,0.8); }
