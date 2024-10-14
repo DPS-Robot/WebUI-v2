@@ -75,7 +75,9 @@ async function getInfo() {
       d = data;
   });
   console.log(d)
-  if(d.status == "listening") {
+  if(d.status == "init") {
+    setInit();
+  } else if(d.status == "listening") {
     setListening();
   } else if(d.status == "processing") {
     setProcessing();
