@@ -77,12 +77,16 @@ async function getInfo() {
   console.log(d)
   if(d.status == "init") {
     setInit();
+    console.log("at INit")
   } else if(d.status == "listening") {
     setListening();
+    console.log("at listening")
   } else if(d.status == "processing") {
     setProcessing();
+    console.log("at processing")
   } else if(d.status == "speaking") {
     setSpeaking();
+    console.log("at speaking")
   } else if(d.status == "error") {
     setError();
   }
@@ -101,7 +105,7 @@ async function getResources(){
 getResources()
 setInterval(getResources, 5000);
 
-//setInterval(getInfo, 1000);
+setInterval(getInfo, 1000);
 
 const circleCpu = document.getElementById("cpuUsage")
 const percentageDisplayCpu = document.getElementById("cpuPercent")
