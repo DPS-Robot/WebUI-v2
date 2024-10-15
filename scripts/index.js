@@ -97,11 +97,15 @@ async function getResources(){
   setProgressCpu(d.cpu);
   setProgressRam(d.ram);
 }
+
+/*
 getResources()
 setInterval(getResources, 5000);
+*/
 
 setInterval(getInfo, 1000);
 
+/*
 const circleCpu = document.getElementById("cpuUsage")
 const percentageDisplayCpu = document.getElementById("cpuPercent")
 const circumference = 92 * 2 * Math.PI;
@@ -111,6 +115,7 @@ const percentageDisplayRam = document.getElementById("ramPercent")
 circleRam.style.strokeDasharray = circumference;
 setProgressCpu(0)
 setProgressRam(0)
+*/
 
 function setProgressRam(percent) {
   const offset = circumference - (percent / 100 * circumference);
