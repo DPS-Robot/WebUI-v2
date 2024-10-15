@@ -39,18 +39,16 @@ body {
 }
 
 .dateTimeContainer {
-  margin-left: 14px;
-}
-
-.dateTimeContainer {
   font-size: 1.5rem;
   border: 1px solid #00000026;
   padding: 1rem;
   border-radius: 1rem;
+  margin-left: 14px;
 }
 
 .dateTimeContainer p {
   margin: 1px;
+  font-size: 28px;
 }
 
 .status {
@@ -61,7 +59,7 @@ body {
 }
 
 .statusText{
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .textContainer {
@@ -144,12 +142,12 @@ body {
 }
 .weatherIcon{
   margin: 2rem;
-  height: 4rem;
-  scale: 1.6;
+  height: 4.5rem;
+  scale: 1.67;
 }
 .weatherCondition p{
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 29px;
 }
 .weatherCondition{
   margin: 2rem;
@@ -194,7 +192,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 31px;
   font-weight: bold;
 }
 
@@ -224,5 +222,28 @@ input[type="range"] {
   height: 13rem;
 }
 .meterText{
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  font-size: 28px;
+}
+.credits{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  border: 1px solid #00000026;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-left: 14px;
+}
+.creditsImagesContainer img {
+  height: 5.5rem;
+}
+.creditsImagesContainer{
+  margin-left: -8px;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.credits p {
+  margin: 0 0 0 15px;
 }
