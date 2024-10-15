@@ -48,7 +48,7 @@ body {
 
 .dateTimeContainer p {
   margin: 1px;
-  font-size: 28px;
+  font-size: 31px;
 }
 
 .status {
@@ -59,7 +59,7 @@ body {
 }
 
 .statusText{
-  font-size: 2.3rem;
+  font-size: 3.6rem;
 }
 
 .textContainer {
@@ -147,7 +147,7 @@ body {
 }
 .weatherCondition p{
   margin: 0;
-  font-size: 29px;
+  font-size: 31px;
 }
 .weatherCondition{
   margin: 2rem;
@@ -246,4 +246,5 @@ input[type="range"] {
 }
 .credits p {
   margin: 0 0 0 15px;
+  font-size: 29px;
 }

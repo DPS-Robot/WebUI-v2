@@ -33,5 +33,9 @@
   border-radius: 50%;
 }
 
-.shape-yellow { background-color: rgb(240,217,139,0.8); }
-.shape-salmon { background-color: rgb(241,163,163,0.8); }
+.shape-yellow {
+  background-color: rgb(255, 223, 186); /* Soft peach */
+}
+.shape-salmon {
+  background-color: rgb(186, 218, 255); /* Light blue */
+}

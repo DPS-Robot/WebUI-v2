@@ -3,7 +3,7 @@ let min = 1;
 let max = 1.5;
 let shapes;
 let statusInfo = {status: "init"};
-let processingSpeed = 4;
+let processingSpeed = 8;
 
 async function getInfo(){
   try {
