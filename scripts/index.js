@@ -4,6 +4,8 @@ function expandElement(id, height) {
   element.style.width = height;
 }
 
+let listening = false
+
 setInit();
 
 function sleep(ms) {
@@ -28,6 +30,7 @@ function changeColor(color) {
 }
 
 function setInit(){
+  listening = false
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Initializing...";
   document.getElementById("circleOverSvg").style.animationName = "none";
@@ -36,6 +39,7 @@ function setInit(){
 }
 
 function setListening() {
+  listening = true
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Listening...";
   document.getElementById("circleOverSvg").style.animationName = "none";
@@ -44,6 +48,7 @@ function setListening() {
 }
 
 async function setProcessing() {
+  listening = false
   expandElement("circleOverSvg", "30rem");
   document.getElementById("statusText").innerHTML = "Processing...";
   document.getElementById("circleOverSvg").style.animationName = "processing";
@@ -53,6 +58,7 @@ async function setProcessing() {
 }
 
 function setSpeaking() {
+  listening = false
   document.getElementById("statusImage").style.animationDuration = "25s"
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Speaking...";
@@ -61,6 +67,7 @@ function setSpeaking() {
 }
 
 async function setError(){
+  listening = false
   expandElement("circleOverSvg", "30rem");
   document.getElementById("statusText").innerHTML = "Error";
   document.getElementById("circleOverSvg").style.animationName = "error";
@@ -151,3 +158,39 @@ fetch(weatherAPIEndpoint).then(response => response.json()).then(data => {
   document.getElementById("temperature").innerHTML = temperature + "°C";
   document.getElementById("condition").innerHTML = condition;
 });
+
+(async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  startAudioProcessing(stream);
+})();
+
+const circle = document.getElementById('statusImage');
+let audioContext;
+let analyser;
+let microphone;
+
+function startAudioProcessing(stream) {
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  analyser = audioContext.createAnalyser();
+  microphone = audioContext.createMediaStreamSource(stream);
+  microphone.connect(analyser);
+
+  analyser.fftSize = 256;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+
+  function updateScale() {
+      analyser.getByteFrequencyData(dataArray);
+      const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
+      const scale = Math.min(1.3, 1 + 2*Math.log((average)));
+      if(average > 50 && listening) {
+        circle.style.transform = `scale(${scale})`;
+      }
+      else if (listening) {
+        circle.style.transform = `scale(1)`;
+      }
+      requestAnimationFrame(updateScale);
+  }
+
+  updateScale();
+}
