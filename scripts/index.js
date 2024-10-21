@@ -4,6 +4,8 @@ function expandElement(id, height) {
   element.style.width = height;
 }
 
+setInit();
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
