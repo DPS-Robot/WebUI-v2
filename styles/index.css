@@ -298,7 +298,7 @@ input[type="range"] {
 
 .credits {
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 1px solid #00000026;
   padding: 1rem;
   border-radius: 1rem;
@@ -306,11 +306,10 @@ input[type="range"] {
 }
 
 .creditsImagesContainer img {
-  height: 5.5rem;
+  height: 7.5rem;
 }
 
 .creditsImagesContainer {
-  margin-left: -8px;
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -320,5 +319,10 @@ input[type="range"] {
 
 .credits p {
   margin: 0 0 0 15px;
-  font-size: 29px;
+  font-size: 1.5rem;
+}
+
+.credits p:first-child {
+  font-family: "SF UI Display Black";
+  font-size: 3rem;
 }
