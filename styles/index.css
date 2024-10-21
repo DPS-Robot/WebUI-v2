@@ -1,7 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@font-face {
+  font-family: 'SF UI Display Ultralight';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Ultralight'), url('../assets/fonts/sf-ui-display-ultralight-58646b19bf205.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Thin'), url('../assets/fonts/sf-ui-display-thin-58646e9b26e8b.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Light'), url('../assets/fonts/sf-ui-display-light-58646b33e0551.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Medium'), url('../assets/fonts/sf-ui-display-medium-58646be638f96.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Semibold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Semibold'), url('../assets/fonts/sf-ui-display-semibold-58646eddcae92.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Bold'), url('../assets/fonts/sf-ui-display-bold-58646a511e3d9.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Heavy';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Heavy'), url('../assets/fonts/sf-ui-display-heavy-586470160b9e5.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'SF UI Display Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF UI Display Black'), url('../assets/fonts/sf-ui-display-black-58646a6b80d5a.woff') format('woff');
+}
 
 * {
-  font-family: "Nunito";
+  font-family: "SF UI Display Medium";
 }
 
 .background {
@@ -23,7 +84,8 @@ body {
   width: 100vw;
   height: 100vh;
   align-items: center;
-  justify-content: space-around;;
+  justify-content: space-around;
+  ;
 }
 
 .upperContainer {
@@ -34,7 +96,7 @@ body {
   width: 100%;
 }
 
-.circleIcons{
+.circleIcons {
   height: 4rem;
 }
 
@@ -58,7 +120,7 @@ body {
   justify-content: center;
 }
 
-.statusText{
+.statusText {
   font-size: 3.6rem;
 }
 
@@ -104,9 +166,11 @@ body {
   0% {
     scale: 1
   }
+
   50% {
     scale: 1.04
   }
+
   100% {
     scale: 1.0
   }
@@ -140,22 +204,26 @@ body {
   justify-content: center;
   align-items: center;
 }
-.weatherIcon{
+
+.weatherIcon {
   margin: 2rem;
   height: 4.5rem;
   scale: 1.67;
 }
-.weatherCondition p{
+
+.weatherCondition p {
   margin: 0;
   font-size: 31px;
 }
-.weatherCondition{
+
+.weatherCondition {
   margin: 2rem;
   display: flex;
   flex-direction: column;
 }
+
 .meter-container {
-  scale: 0.67;  
+  scale: 0.67;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,6 +278,7 @@ input[type="range"] {
   justify-content: space-between;
   margin-top: 5px;
 }
+
 .systemResources {
   border: 1px solid #00000026;
   font-size: 1.5rem;
@@ -221,11 +290,13 @@ input[type="range"] {
   align-items: center;
   height: 13rem;
 }
-.meterText{
+
+.meterText {
   margin-top: 1.5rem;
   font-size: 28px;
 }
-.credits{
+
+.credits {
   font-size: 1.5rem;
   margin-top: 1rem;
   border: 1px solid #00000026;
@@ -233,10 +304,12 @@ input[type="range"] {
   border-radius: 1rem;
   margin-left: 14px;
 }
+
 .creditsImagesContainer img {
   height: 5.5rem;
 }
-.creditsImagesContainer{
+
+.creditsImagesContainer {
   margin-left: -8px;
   margin-top: 10px;
   width: 100%;
@@ -244,6 +317,7 @@ input[type="range"] {
   justify-content: space-around;
   align-items: center;
 }
+
 .credits p {
   margin: 0 0 0 15px;
   font-size: 29px;
