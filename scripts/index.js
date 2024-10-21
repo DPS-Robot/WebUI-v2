@@ -183,10 +183,10 @@ function startAudioProcessing(stream) {
       analyser.getByteFrequencyData(dataArray);
       const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
       const scale = Math.min(1.3, 1 + 2*Math.log((average)));
-      if(average > 50 && listening) {
+      if(average > 55 && listening) {
         circle.style.transform = `scale(${scale})`;
       }
-      else if (listening) {
+      else {
         circle.style.transform = `scale(1)`;
       }
       requestAnimationFrame(updateScale);
