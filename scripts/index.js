@@ -175,7 +175,7 @@ function startAudioProcessing(stream) {
   microphone = audioContext.createMediaStreamSource(stream);
   microphone.connect(analyser);
 
-  analyser.fftSize = 256;
+  analyser.fftSize = 256; 
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
