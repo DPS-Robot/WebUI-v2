@@ -112,7 +112,7 @@ getResources()
 setInterval(getResources, 5000);
 */
 
-setInterval(getInfo, 1000);
+setInterval(getInfo, 200);
 
 /*
 const circleCpu = document.getElementById("cpuUsage")
