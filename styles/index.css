@@ -81,6 +81,7 @@ body {
 }
 
 .main-container {
+  opacity: 0;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -341,7 +342,7 @@ input[type="range"] {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #ffffff00;
   opacity: 1;
   z-index: 999;
   animation-name: zoominout;

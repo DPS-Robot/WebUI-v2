@@ -3,24 +3,25 @@ function expandElement(id, height) {
   element.style.height = height;
   element.style.width = height;
 }
+
 let booted;
 
 let listening = false
 
 setInit();
-
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function exitSplash(){
   let splash = document.getElementById("bootupSplash");
+  document.querySelector(".main-container").style.opacity = 1;
   if(splash.style.display === 'none') return;
   splash.style.animationName = "na";
   splash.style.animationIterationCount = "1";
-  splash.style.animationDuration = "500ms";
+  splash.style.animationDuration = "800ms";
   splash.style.animationName = "exit";
-  sleep(1000)
+  sleep(1200)
   splash.style.display = "none";
 }
 
