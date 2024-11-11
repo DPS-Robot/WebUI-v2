@@ -7,15 +7,25 @@
   <link rel="stylesheet" href="./styles/index.css">
   <script src="env.js"></script>
   <title>Status Page</title>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 
 <body>
+  <div class="bootupSplash" id="bootupSplash">
+    <div class="splashWrapper">
+    <p id="splashTextName"><img src="./assets/dps_logo.webp">Presto</p>
+    <div class="bootupSplashContainer">
+      <p class="splashText">Booting Up...</p>
+    </div>
+    <img class="bootupSplashLoading" src="./assets/bootupSplash.svg">
+  </div>
+  </div>
   <iframe class="background" src="./assets/background/index.html" frameborder="0" allowfullscreen></iframe>
   <div class="main-container">
 
     <div class="sidebar">
       <div class="credits">
-        <p>Shaif</p>
+        <p>Presto</p>
         <p>Presented By:</p>
         <div class="creditsImagesContainer">
           <img class="creditImage dps" src="./assets/dps_logo.webp">
@@ -91,5 +101,4 @@
     <script src="./scripts/constants.js"></script>
     <script src="./scripts/index.js" defer></script>
 </body>
-
 </html>

@@ -63,6 +63,7 @@
 
 * {
   font-family: "SF UI Display Medium";
+  overflow: hidden;
 }
 
 .background {
@@ -331,4 +332,89 @@ input[type="range"] {
 }
 *::-webkit-scrollbar{
   display: none;
+}
+.bootupSplash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+  z-index: 999;
+  animation-name: zoominout;
+  scale: 1.0;
+  transition-duration: 2s;
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes zoominout {
+  0% {
+    scale: 1.0;
+  }
+  50% {
+    scale: 1.07;
+  } 
+  100% {
+    scale: 1.0;
+  }
+}
+
+@keyframes exit {
+  from{
+    scale: 1.0;
+    opacity: 1.0;
+    display: flex;
+  }
+  to {
+    scale: 5.0;
+    opacity: 0.0;
+    display: none;
+  }
+}
+
+#splashTextName{
+    scale: 3.1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    width: 6.5rem;
+}
+#splashTextName img{
+  height: 2.2rem;
+}
+.bootupSplashContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+.splashText{
+  font-size: 2.5rem;
+  text-align: center;
+}
+.splashWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  height: 32rem;
+  align-items: center;
+  justify-content: center;
+  animation-name: enter;
+  animation-duration: 700ms;
+  scale: 1.4;
+}
+@keyframes enter {
+  from{
+    scale: 0.0;
+    opacity: 0.0;
+  }
+  to{
+    scale: 1.4;
+    opacity: 1.0;
+  }
 }

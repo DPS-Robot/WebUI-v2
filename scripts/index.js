@@ -3,6 +3,7 @@ function expandElement(id, height) {
   element.style.height = height;
   element.style.width = height;
 }
+let booted;
 
 let listening = false
 
@@ -10,6 +11,17 @@ setInit();
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function exitSplash(){
+  let splash = document.getElementById("bootupSplash");
+  if(splash.style.display === 'none') return;
+  splash.style.animationName = "na";
+  splash.style.animationIterationCount = "1";
+  splash.style.animationDuration = "500ms";
+  splash.style.animationName = "exit";
+  sleep(1000)
+  splash.style.display = "none";
 }
 
 function changeColor(color) {
@@ -28,8 +40,8 @@ function changeColor(color) {
     });
   document.getElementById("circleOverSvg").style.backgroundColor = color;
 }
-
 function setInit(){
+  booted = false;
   listening = false
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Initializing...";
@@ -39,6 +51,9 @@ function setInit(){
 }
 
 function setListening() {
+  if(!booted){
+    booted = true;
+  }
   listening = true
   expandElement("circleOverSvg", "25rem");
   document.getElementById("statusText").innerHTML = "Listening...";
@@ -83,6 +98,9 @@ async function getInfo() {
     .then(data => {
       d = data;
   });
+  if(booted){
+    exitSplash()
+  }
   if(d.status == "init") {
     setInit();
   } else if(d.status == "listening") {
